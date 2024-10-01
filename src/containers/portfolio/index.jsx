@@ -17,7 +17,7 @@ const portfolioData = [
   {
     sectionId: 2,
     projectName: "Personal Portfolio",
-    projectLink: "",
+    projectLink: "https://enitech-portfolio.vercel.app/portfolio",
     image: portfolio,
   },
   {
