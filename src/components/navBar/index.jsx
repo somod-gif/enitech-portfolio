@@ -1,69 +1,67 @@
 import React, { useState } from "react";
-// import { FaReact } from 'react-icons/fa';
-import {HiX} from 'react-icons/hi'
-import {FaBars} from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-// import './style.scss'
-import './style.css'
-// import '../../index.css'
+import {HiX } from "react-icons/hi";
+import { FaBars, FaReact } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./style.scss";
 const data = [
   {
-    lablel: "HOME",
+    label: "HOME",
     to: "/",
   },
   {
-    lablel: "ABOUT ME",
+    label: "ABOUT ME",
     to: "/about",
   },
   {
-    lablel: "SKILLS",
+    label: "SKILLS",
     to: "/skills",
   },
   {
-    lablel: "RESUME",
+    label: "RESUME",
     to: "/resume",
   },
   {
-    lablel: "PORTFOLIO",
+    label: "PORTFOLIO",
     to: "/portfolio",
   },
   {
-    lablel: "CONTACT ME",
+    label: "CONTACT",
     to: "/contact",
   },
 ];
 
 const Navbar = () => {
+  const [click, setClick] = useState(false);
 
-  const [toggleIcon, setToggleIcon] = useState(false)
-  
+  const handleClick = () => setClick(!click);
+  const Close = () => setClick(false);
 
-  const handleToggleIcon = () => {
-    setToggleIcon(!toggleIcon)  
-  }
   return (
     <div>
-      <nav className="navbar">
-        <div className="nav__container">
-          <Link to={"/"} className="navbar__container__logo">
-           <h2>Enitech</h2>
-            {/* <FaReact size={35} /> */}
+      <div className={click ? "main-container" : ""} onClick={() => Close()} />
+      <nav className="navbar" onClick={(e) => e.stopPropagation()}>
+        <div className="navbar__container">
+          <Link exact to="/" className="navbar__container__logo">
+            <FaReact size={30} />
           </Link>
-        </div>
-        <ul className={`navbar__container__menu ${toggleIcon ? 'active' : ''} `}>
-          {data.map((item, key) => (
-            <li key={key} className="navbar__container__menu__item">
-              <Link
-                className="navbar__container__menu__item__links"
-                to={item.to}
-              >
-                {item.lablel}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="nav-icon" onClick={handleToggleIcon}>
-          {toggleIcon ? <HiX size={30} /> : <FaBars size={30} />}
+          <ul className={click ? "navbar__container__menu active" : "navbar__container__menu"}>
+            {data.map((item) => (
+              <li className="navbar__container__menu__item">
+                <Link
+                  exact
+                  to={item.to}
+                  activeClassName="active"
+                  className="navbar__container__menu__item__links"
+                  onClick={click ? handleClick : null}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            {click ? <HiX size={30} /> : <FaBars size={30} />}
+          </div>
         </div>
       </nav>
     </div>

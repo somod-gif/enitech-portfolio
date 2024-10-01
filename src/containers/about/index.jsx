@@ -1,9 +1,18 @@
-import React from 'react'
-import './style.css'
-import {BsInfoCircleFill} from 'react-icons/bs';
-import { FaDev, FaDatabase } from "react-icons/fa";
+import React from "react";
+import "./style.css";
+import { BsInfoCircleFill } from "react-icons/bs";
+import {
+  FaDev,
+  FaDatabase,
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa"; 
 import { DiAndroid, DiApple } from "react-icons/di";
-import PageHeaderContent from '../../components/PageHeaderContent';
+import PageHeaderContent from "../../components/PageHeaderContent";
 import { Animate } from "react-simple-animate";
 
 const personalDetails = [
@@ -11,10 +20,6 @@ const personalDetails = [
     label: "Name",
     value: "Badmus Eniola",
   },
-  // {
-  //   label: "Age",
-  //   value: "18",
-  // },
   {
     label: "Address",
     value: "Nigeria",
@@ -31,22 +36,18 @@ const personalDetails = [
 
 const About = () => {
   return (
-    <section id="about" className='about'>
-
-
+    <section id="about" className="about">
       <PageHeaderContent
-        headerText = "About me"
-        icon={<BsInfoCircleFill size={40}/>}
+        headerText="About me"
+        icon={<BsInfoCircleFill size={40} />}
       />
-        <div className="about__content">
+      <div className="about__content">
         <div className="about__content__personalWrapper">
           <Animate
             play
             duration={1}
             delay={0}
-            start={{
-              transform: "translateX(-900px)",
-            }}
+            start={{ transform: "translateX(-900px)" }}
             end={{ transform: "translateX(0px)" }}
           >
             <h3 className="developerContent">Front End Developer</h3>
@@ -55,22 +56,14 @@ const About = () => {
               experience in blending the art of design with skill of programming
               to deliver an immersive and engaging user experience through
               efficient website development, proactive feature optimization, and
-              relentless debugging. Very passionate about aesthetics and UI
-              design. It is imperative that you provide a thorough and
-              professional approach to your resume. As a Front End Developer
-              you'll be judged by your ability to use UX and UI concepts and
-              follow design guidelines. It's about expressing your attention to
-              detail and how you can help implement design ideas for your future
-              employer.
+              relentless debugging...
             </p>
           </Animate>
           <Animate
             play
             duration={1}
             delay={0}
-            start={{
-              transform: "translateX(500px)",
-            }}
+            start={{ transform: "translateX(500px)" }}
             end={{ transform: "translateX(0px)" }}
           >
             <h3 className="personalContent">Personal Information</h3>
@@ -83,33 +76,88 @@ const About = () => {
               ))}
             </ul>
           </Animate>
+
+
+          {/* Social Media Icons Section */}
+          <Animate
+            play
+            duration={1.5}
+            delay={1}
+            start={{
+              transform: "translateY(600px)",
+            }}
+            end={{ transform: "translateX(0px)" }}
+          >
+          <div className="about__content__socialIconsWrapper">
+            <h3>Connect with me</h3>
+            <div className="social-icons">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={45} color="#0077b5" />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={45} color="#333" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter size={45} color="#1DA1F2" />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook size={45} color="#4267B2" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram size={45} color="#E1306C" />
+              </a>
+              <a
+                href="https://wa.me/+2348146438621"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={45} color="#25D366" />
+              </a>
+            </div>
+          </div>
+          </Animate>
         </div>
+
         <div className="about__content__servicesWrapper">
           <Animate
             play
             duration={1}
             delay={0}
-            start={{
-              transform: "translateX(500px)",
-            }}
+            start={{ transform: "translateX(500px)" }}
             end={{ transform: "translateX(0px)" }}
           >
             <div className="about__content__servicesWrapper__innerContent">
               <div>
                 <DiApple color="#ffdd40" size={60} />
-                {/* <p className="service-text">Web Design</p> */}
               </div>
               <div>
                 <FaDev color="#ffdd40" size={60} />
-                {/* <p className="service-text">Web Development</p> */}
               </div>
               <div>
                 <FaDatabase color="#ffdd40" size={60} />
-                {/* <p className="service-text">Databases</p> */}
               </div>
               <div>
                 <DiAndroid color="#ffdd40" size={60} />
-                {/* <p className="service-text">Android Developement</p> */}
               </div>
             </div>
           </Animate>
@@ -117,6 +165,6 @@ const About = () => {
       </div>
     </section>
   );
-}
+};
 
 export default About;

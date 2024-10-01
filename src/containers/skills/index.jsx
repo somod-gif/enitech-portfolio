@@ -21,22 +21,7 @@ const data = [
         skillName: "JAVASCRIPT",
         percentage: "90",
       },
-      // {
-      //   skillName: "REACT JS",
-      //   percentage: "90",
-      // },
-      // {
-      //   skillName: "TAILWINDCSS",
-      //   percentage: "75",
-      // },
-      // {
-      //   skillName: "BOOTSTRAP",
-      //   percentage: "85",
-      // },
-      // {
-      //   skillName: "SASS",
-      //   percentage: "85",
-      // },
+      
     ],
   },
   {
@@ -44,6 +29,10 @@ const data = [
     data: [
       {
         skillName: "REACT JS",
+        percentage: "90",
+      },
+      {
+        skillName: "NEXT JS",
         percentage: "90",
       },
       {
@@ -58,27 +47,11 @@ const data = [
         skillName: "SASS",
         percentage: "85",
       },
-      // {
-      //   skillName: "FIREBASE",
-      //   percentage: "65",
-      // },
-      // {
-      //   skillName: "EXPRESS",
-      //   percentage: "65",
-      // },
+      {
+        skillName: "FIREBASE",
+        percentage: "65",
+      },
       
-      // {
-      //   skillName: "RUBY",
-      //   percentage: "45",
-      // },
-      // {
-      //   skillName: "C#",
-      //   percentage: "75",
-      // },
-      // {
-      //   skillName: "KOTLIN",
-      //   percentage: "55",
-      // }
     ],
   },
   {
@@ -92,14 +65,7 @@ const data = [
         skillName: "REDUX",
         percentage: "78",
       },
-      // {
-      //   skillName: "REDIS",
-      //   percentage: "35",
-      // },
-      // {
-      //   skillName: "ORACLE",
-      //   percentage: "88",
-      // }
+      
     ],
   },
 ];
